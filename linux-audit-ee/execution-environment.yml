@@ -1,0 +1,16 @@
+---
+version: 1
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  system: bindep.txt
+
+additional_build_steps:
+  prepend: |
+    RUN pip3 install --upgrade pip setuptools
+    RUN microdnf install -y wget curl libicu
+    RUN wget -O /tmp/powershell.rpm https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-1.rh.x86_64.rpm && \
+        rpm -ivh /tmp/powershell.rpm && \
+        rm -f /tmp/powershell.rpm
+  append:
+    - RUN ls -al /

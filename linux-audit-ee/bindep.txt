@@ -1,0 +1,3 @@
+git [platform:rpm]
+libicu [platform:rpm]
+iputils [platform:rpm]
