@@ -1,0 +1,15 @@
+- name: Ensure curl is installed
+  package:
+    name: curl
+    state: present
+
+- name: Create a test file
+  copy:
+    content: |
+      This server is managed using ansible-pull.
+      Managed at: {{ ansible_date_time.iso8601 }}
+    dest: /etc/ansible-pull-test.txt
+    owner: root
+    group: root
+    mode: '0644'
+

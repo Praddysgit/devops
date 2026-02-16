@@ -1,0 +1,9 @@
+- name: Ansible Pull Lab
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - common
+
