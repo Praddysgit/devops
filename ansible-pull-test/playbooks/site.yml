@@ -1,3 +1,4 @@
+---
 - name: Ansible Pull Lab
   hosts: localhost
   connection: local
